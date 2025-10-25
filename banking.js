@@ -55,7 +55,7 @@ app.post("/deposit", authenticateJWT, (req, res) => {
   }
 
   accountBalance += amount;
-  res.json({ message: Deposited ₹${amount} successfully., newBalance: accountBalance });
+  res.json('{ message: Deposited ₹${amount} successfully., newBalance: accountBalance }');
 });
 
 app.post("/withdraw", authenticateJWT, (req, res) => {
@@ -70,8 +70,8 @@ app.post("/withdraw", authenticateJWT, (req, res) => {
   }
 
   accountBalance -= amount;
-  res.json({ message: Withdrew ₹${amount} successfully., newBalance: accountBalance });
+  res.json('{ message: Withdrew ₹${amount} successfully., newBalance: accountBalance }');
 });
 
 const PORT = 3000;
-app.listen(PORT, () => console.log(Banking API running on http://localhost:${PORT}));
+app.listen(PORT, () => console.log('Banking API running on http://localhost:${PORT}'));
